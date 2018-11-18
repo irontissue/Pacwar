@@ -11,12 +11,13 @@ def main():
     # blog2Test()
     # superSuperGeneTest()
 
-    awesomeGene = [0, 0, 3, 2, 0, 0, 0, 0, 1, 0, 1, 1, 3, 3, 1, 1, 3, 3, 3, 0, 3, 2, 1, 3, 3, 3, 0, 2, 3, 1, 3, 3, 1, 3, 3, 1, 2, 3, 1, 1, 1, 1, 1, 3, 3, 1, 0, 2, 0, 1]
-    awesomerGene = adjustGeneToHandilyBeatOnesAndThrees(awesomeGene)
-    # One example of awesomerGene:
-    # [0, 3, 1, 2, 0, 0, 0, 0, 1, 0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 2, 1, 1, 2, 1, 0, 2, 1, 3, 3, 3, 1, 3, 2, 2, 2, 3, 1, 1, 1, 1, 1, 0, 3, 3, 0, 3, 2, 2]
-    battleResults(awesomerGene, ones, False)
-    battleResults(awesomerGene, threes, False)
+    # awesomeGene = [0, 0, 3, 2, 0, 0, 0, 0, 1, 0, 1, 1, 3, 3, 1, 1, 3, 3, 3, 0, 3, 2, 1, 3, 3, 3, 0, 2, 3, 1, 3, 3, 1, 3, 3, 1, 2, 3, 1, 1, 1, 1, 1, 3, 3, 1, 0, 2, 0, 1]
+    # awesomerGene = adjustGeneToHandilyBeatOnesAndThrees(awesomeGene)
+    # # One example of awesomerGene:
+    # awesomerGene = [0, 3, 1, 2, 0, 0, 0, 0, 1, 0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 2, 1, 1, 2, 1, 0, 2, 1, 3, 3, 3, 1, 3, 2, 2, 2, 3, 1, 1, 1, 1, 1, 0, 3, 3, 0, 3, 2, 2]
+    # battleResults(awesomerGene, ones, False)
+    # battleResults(awesomerGene, threes, False)
+    # battleResults(awesomeGene, awesomerGene, False)
 
 # Requires that the given gene will beat ones and threes with an average score of >16.
 def adjustGeneToHandilyBeatOnesAndThrees(gene):
@@ -52,7 +53,7 @@ def superSuperGeneHelper(competitorSetSize, depth, maxDepth):
     threes = [3] * 50
     if depth >= maxDepth:
         randOneThree = randOnesAndThreesStartFunction()
-        return hillClimbVSCompetitors([list(ones), list(threes)], True, False, True, randOneThree, lambda:randOnesAndThreesStartFunction())
+        return hillClimbVSCompetitors([list(ones), list(threes)], True, True, True, randOneThree, lambda:randOnesAndThreesStartFunction(), 15)
     else:
         competitorSet = [list(ones), list(threes)]
         for _ in range(competitorSetSize):
