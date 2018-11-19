@@ -11,13 +11,15 @@ def main():
     # blog2Test()
     # superSuperGeneTest()
 
-    # awesomeGene = [0, 0, 3, 2, 0, 0, 0, 0, 1, 0, 1, 1, 3, 3, 1, 1, 3, 3, 3, 0, 3, 2, 1, 3, 3, 3, 0, 2, 3, 1, 3, 3, 1, 3, 3, 1, 2, 3, 1, 1, 1, 1, 1, 3, 3, 1, 0, 2, 0, 1]
-    # awesomerGene = adjustGeneToHandilyBeatOnesAndThrees(awesomeGene)
+    awesomeGene = [1, 0, 3, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 0, 3, 1, 0, 3, 3, 0, 3, 3, 3, 1, 3, 3, 2, 2, 3, 2, 0, 1, 0, 3, 1, 0, 0, 3, 1, 0, 3, 3, 2, 0, 2, 2, 0, 2]
+    awesomerGene = adjustGeneToHandilyBeatOnesAndThrees(awesomeGene)
     # # One example of awesomerGene:
     # awesomerGene = [0, 3, 1, 2, 0, 0, 0, 0, 1, 0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 2, 1, 1, 2, 1, 0, 2, 1, 3, 3, 3, 1, 3, 2, 2, 2, 3, 1, 1, 1, 1, 1, 0, 3, 3, 0, 3, 2, 2]
-    # battleResults(awesomerGene, ones, False)
-    # battleResults(awesomerGene, threes, False)
-    # battleResults(awesomeGene, awesomerGene, False)
+    battleResults(awesomeGene, ones, False)
+    battleResults(awesomeGene, threes, False)
+    battleResults(awesomerGene, ones, False)
+    battleResults(awesomerGene, threes, False)
+    battleResults(awesomeGene, awesomerGene, False)
 
 # Requires that the given gene will beat ones and threes with an average score of >16.
 def adjustGeneToHandilyBeatOnesAndThrees(gene):
